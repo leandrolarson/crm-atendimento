@@ -1,3 +1,18 @@
+# CRM Atendimento
+
+### **Autor:** Leandro Larson
+
+Este projeto tem como objetivo implementar progressivamente uma aplicação web inspirada em sistemas de gestão de atendimento e vendas (ex: cadastro de leads, consulta de CEP, cronometragem de chamados, histórico de ações e controle de estágios comerciais), sendo o diferencial a mensuração exata do tempo de esforço da equipe por canal de comunicação vinculado ao valor financeiro das negociações.
+
+O frontend da aplicação foi desenvolvido com HTML, CSS (Bootstrap e SCSS) e JavaScript (utilizando jQuery e Fetch API), e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.
+
+## 📚 Documentação do Projeto
+
+Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
+
+- [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral, atores e histórias de usuário.
+- [🛠️ Especificação Técnica (Tech Spec)](./docs/architecture.md) - Diagrama de banco de dados (DER), dicionário de dados e rotas da API (JSON Server).
+
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
