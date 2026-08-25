@@ -2,7 +2,7 @@
 
 ## 1. Visão Geral e Objetivo
 
-**Autor:** [Seu Nome Completo]
+**Autor:** Leandro Larson
 
 **Projeto:** CRM de Atendimento & Vendas (`crm-atendimento`)
 
