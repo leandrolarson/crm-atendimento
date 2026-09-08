@@ -16,6 +16,12 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 ## 🎨 Design
 - [🎨 Design System e Protótipo - Stitch AI](https://stitch.withgoogle.com/projects/6519395341171122045) - Identidade visual e Telas Interativas da Aplicação.
 
+## 💻 Tecnologias e Dependências
+
+- **Framework CSS:** "Bootstrap 5.3 - A escolha do "Bootstrap 5.3" é perfeita por oferecer uma solução madura, estável e muito utilizada para desenvolvimento de aplicações responsivas. O sistema de Grid facilita a adaptação de layouts para os mais diferentes dispositivos, enquanto seus componentes e classes agilizam a implementação do design definido no Stitch. Além disso o Bootstrap já possui recursos JavaScript para componentes interativos, como Modais, Carrosséis e muitos outros, reduzindo a necessidade de desenvolvimento manual. O projeto também possui um ecossistema consolidado, documentação extensa, manutenção ativa e licença MIT, tornando-o uma escolha segura e adequada tanto para projetos comerciais quanto de código aberto.
+
+- **API:** "ViaCEP" - A utilização da **ViaCEP** faz sentido no CRM porque permite automatizar o preenchimento dos dados de endereço a partir do CEP informado pelo cliente. Isso reduz a necessidade de digitação manual, diminui erros de cadastro e torna o preenchimento do formulário mais rápido e prático para o atendente. Além disso, sua integração por meio de uma requisição HTTP em formato JSON é simples e adequada à arquitetura do projeto.
+
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
