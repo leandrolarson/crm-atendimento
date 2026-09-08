@@ -147,3 +147,18 @@ erDiagram
 }
 
 ```
+---
+
+## 7. 🧰 Tecnologias Utilizadas
+
+### Frontend
+
+- Bootstrap v5.3.8(https://getbootstrap.com/)
+
+### Backend (Fake API)
+
+- JSON Server
+
+### APIs Externas
+
+- ViaCEP(https://viacep.com.br/)
