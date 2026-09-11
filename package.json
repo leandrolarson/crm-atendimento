@@ -1,0 +1,31 @@
+{
+  "name": "crm-atendimento",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo implementar progressivamente uma aplicação web inspirada em sistemas de gestão de atendimento e vendas (ex: cadastro de leads, consulta de CEP, cronometragem de chamados, histórico de ações e controle de estágios comerciais), sendo o diferencial a mensuração exata do tempo de esforço da equipe por canal de comunicação vinculado ao valor financeiro das negociações.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrolarson/crm-atendimento.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/leandrolarson/crm-atendimento/issues"
+  },
+  "homepage": "https://github.com/leandrolarson/crm-atendimento#readme",
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
