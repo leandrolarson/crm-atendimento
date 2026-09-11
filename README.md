@@ -6,6 +6,16 @@ Este projeto tem como objetivo implementar progressivamente uma aplicação web 
 
 O frontend da aplicação foi desenvolvido com HTML, CSS (Bootstrap e SCSS) e JavaScript (utilizando jQuery e Fetch API), e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.
 
+## Checklist da Atividade 06
+
+- [x] Configurei minha identidade no Git
+- [x] Clonei o repositório do meu projeto
+- [x] Inicializei o NPM (package.json)
+- [x] Criei o .gitignore ignorando node_modules e .env
+- [x] Instalei jquery e uuid como dependências de produção
+- [x] Instalei gh-pages como dependência de desenvolvimento
+- [x] Fiz commit e push para a branch main
+
 ## 📚 Documentação do Projeto
 
 Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
