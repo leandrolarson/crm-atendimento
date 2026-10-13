@@ -1,0 +1,159 @@
+/* ==========================================================================
+   CRM ATENDIMENTO & VENDAS - DASHBOARD SCREEN STYLES (MOBILE-FIRST)
+   ========================================================================== */
+
+/* Funnel Stage Cards */
+.crm-funnel-card {
+  background-color: var(--crm-bg-body);
+  border: 1px solid var(--crm-border-color);
+  border-radius: 0.875rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.crm-funnel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.crm-funnel-progress {
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.crm-funnel-bar {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.crm-funnel-bar.novo { width: 100%; background-color: var(--crm-primary); }
+.crm-funnel-bar.orcamento { width: 82%; background-color: var(--crm-warning); }
+.crm-funnel-bar.pedido { width: 63%; background-color: var(--crm-stage-order); }
+.crm-funnel-bar.fechado { width: 48%; background-color: var(--crm-success); }
+.crm-funnel-bar.perdido { width: 14%; background-color: var(--crm-danger); }
+
+/* Funnel connector strip */
+.crm-funnel-connector-strip {
+  background-color: rgba(248, 250, 252, 0.9);
+  border: 1px solid var(--crm-border-color);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.crm-funnel-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: var(--crm-text-secondary);
+}
+
+/* Agent Performance Row */
+.crm-agent-row {
+  background-color: var(--crm-bg-body);
+  border: 1px solid var(--crm-border-color);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.crm-agent-row:hover {
+  background-color: #f1f5f9;
+}
+
+.crm-agent-progress {
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.crm-agent-bar {
+  height: 100%;
+  background-color: var(--crm-primary);
+  border-radius: 9999px;
+  transition: width 0.6s ease;
+}
+
+.crm-agent-bar.w-85 { width: 85%; }
+.crm-agent-bar.w-60 { width: 60%; }
+.crm-agent-bar.w-40 { width: 40%; }
+.crm-agent-bar.w-35 { width: 35%; }
+.crm-agent-bar.w-25 { width: 25%; }
+
+/* Channel Breakdown Bars */
+.crm-channel-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.crm-channel-progress {
+  height: 6px;
+  background-color: var(--crm-bg-body);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.crm-channel-fill {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.crm-channel-fill.whatsapp { width: 58%; background-color: var(--crm-success); }
+.crm-channel-fill.instagram { width: 22%; background-color: #e1306c; }
+.crm-channel-fill.email { width: 14%; background-color: var(--crm-primary); }
+.crm-channel-fill.telefone { width: 6%; background-color: var(--crm-text-secondary); }
+
+/* SLA Urgent Alert item */
+.crm-sla-alert-item {
+  background-color: rgba(254, 226, 226, 0.4);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 0.625rem;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.crm-sla-alert-item.warning {
+  background-color: rgba(254, 243, 199, 0.4);
+  border-color: rgba(217, 119, 6, 0.2);
+}
+
+/* Bottom Attendance Sticky / Floating Bar */
+.crm-active-timer-bar {
+  background-color: var(--crm-sidebar-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.875rem;
+  padding: 1.25rem 1.5rem;
+  color: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25);
+}
+
+.crm-timer-display {
+  font-family: monospace;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.spin-animation {
+  animation: spin 0.8s linear;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}

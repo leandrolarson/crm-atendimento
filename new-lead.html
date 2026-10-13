@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Novo Lead - CRM Atendimento &amp; Vendas</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- Custom CSS (External Stylesheets - No Inline Styles) -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/new-lead.css">
+</head>
+<body class="crm-has-sidebar">
+
+  <!-- Mobile Offcanvas Sidebar Drawer -->
+  <div class="offcanvas offcanvas-start crm-sidebar text-white" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+    <div class="offcanvas-header pb-0 border-0">
+      <div class="d-flex align-items-center gap-2">
+        <div class="crm-avatar crm-avatar-sm crm-avatar-primary">
+          <span class="material-symbols-outlined fs-sm">support_agent</span>
+        </div>
+        <div>
+          <h5 class="offcanvas-title fw-bold fs-6 mb-0 text-white" id="sidebarOffcanvasLabel">Nexus CRM</h5>
+          <span class="text-secondary small">Atendimento &amp; Vendas</span>
+        </div>
+      </div>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between px-0 pt-4">
+      <nav class="nav flex-column gap-1 px-3">
+        <a class="nav-link" href="dashboard.html">
+          <span class="material-symbols-outlined">grid_view</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-link" href="lead-manager.html">
+          <span class="material-symbols-outlined">view_kanban</span>
+          <span>Chamados / Leads</span>
+        </a>
+        <a class="nav-link active" href="new-lead.html">
+          <span class="material-symbols-outlined">person_add</span>
+          <span>Novo Lead</span>
+        </a>
+        <a class="nav-link" href="index.html">
+          <span class="material-symbols-outlined">badge</span>
+          <span>Trocar Perfil / Login</span>
+        </a>
+      </nav>
+      <div class="px-3 pt-3">
+        <div class="crm-queue-badge d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <span class="status-pulse-dot success"></span>
+            <div>
+              <div class="fw-semibold small text-white">Fila Ativa</div>
+              <div class="text-secondary small">8 em espera</div>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-secondary fs-md">timer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop Docked Sidebar -->
+  <aside class="crm-desktop-sidebar crm-sidebar d-none d-lg-flex">
+    <div>
+      <div class="d-flex align-items-center gap-2 px-2 mb-4">
+        <div class="crm-avatar crm-avatar-sm crm-avatar-primary">
+          <span class="material-symbols-outlined fs-sm">support_agent</span>
+        </div>
+        <div>
+          <span class="fw-bold fs-6 text-white d-block">Nexus CRM</span>
+          <span class="text-secondary small">Atendimento &amp; Vendas</span>
+        </div>
+      </div>
+      <nav class="nav flex-column gap-1">
+        <a class="nav-link" href="dashboard.html">
+          <span class="material-symbols-outlined">grid_view</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-link" href="lead-manager.html">
+          <span class="material-symbols-outlined">view_kanban</span>
+          <span>Chamados / Leads</span>
+        </a>
+        <a class="nav-link active" href="new-lead.html">
+          <span class="material-symbols-outlined">person_add</span>
+          <span>Novo Lead</span>
+        </a>
+        <a class="nav-link" href="index.html">
+          <span class="material-symbols-outlined">badge</span>
+          <span>Trocar Perfil / Login</span>
+        </a>
+      </nav>
+    </div>
+    <div>
+      <div class="crm-queue-badge d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+          <span class="status-pulse-dot success"></span>
+          <div>
+            <div class="fw-semibold small text-white">Fila Ativa</div>
+            <div class="text-secondary small">8 em espera</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-secondary fs-md">timer</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Top App Bar / Header -->
+  <header class="crm-app-header d-flex align-items-center justify-content-between px-3 px-md-4">
+    <div class="d-flex align-items-center gap-3 flex-grow-1">
+      <!-- Mobile Sidebar Toggle -->
+      <button class="btn btn-light d-lg-none p-2 border" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Abrir Menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <!-- Global Search -->
+      <div class="input-group d-none d-sm-flex max-w-md">
+        <span class="input-group-text bg-light border-end-0">
+          <span class="material-symbols-outlined fs-md text-secondary">search</span>
+        </span>
+        <input type="text" class="form-control bg-light border-start-0 ps-0" placeholder="Buscar lead, chamado, protocolo ou CPF...">
+      </div>
+    </div>
+
+    <!-- Right Header Actions -->
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-light p-2 position-relative border" type="button" aria-label="Notificações">
+        <span class="material-symbols-outlined fs-md text-secondary">notifications</span>
+        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+      </button>
+      <div class="vr d-none d-sm-block"></div>
+      <div class="d-flex align-items-center gap-2">
+        <div class="text-end d-none d-sm-block">
+          <div class="fw-semibold small text-dark" id="shellUserName">Leandro Larson</div>
+          <div class="text-secondary small" id="shellUserRole">Gestor Comercial</div>
+        </div>
+        <div class="crm-avatar crm-avatar-primary shadow-sm" id="shellUserAvatar">
+          LL
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="crm-main-content">
+    <div class="container-fluid px-0">
+      
+      <!-- Top Alert Notification (Toast style / system feedback) -->
+      <div class="alert alert-success alert-dismissible d-none align-items-center justify-content-between mb-4 shadow-sm" id="statusToast" role="alert">
+        <div class="d-flex align-items-center gap-2">
+          <span class="material-symbols-outlined text-success fs-lg">check_circle</span>
+          <div>
+            <strong class="d-block">Lead cadastrado com sucesso!</strong>
+            <span class="small text-secondary">A oportunidade foi indexada ao pipeline e distribuída para atendimento imediato.</span>
+          </div>
+        </div>
+        <button type="button" class="btn-close" onclick="document.getElementById('statusToast').classList.add('d-none')" aria-label="Close"></button>
+      </div>
+
+      <!-- Page Header & Action Bar -->
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
+        <div>
+          <!-- Breadcrumbs -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-1 small text-secondary">
+              <li class="breadcrumb-item">
+                <a href="dashboard.html" class="text-secondary d-inline-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-sm">home</span> Início
+                </a>
+              </li>
+              <li class="breadcrumb-item"><a href="lead-manager.html" class="text-secondary">Chamados &amp; Leads</a></li>
+              <li class="breadcrumb-item active fw-semibold text-dark" aria-current="page">Novo Lead</li>
+            </ol>
+          </nav>
+          <h1 class="h3 fw-bold mb-1 text-dark">Cadastrar Novo Lead</h1>
+          <p class="text-secondary small mb-0">
+            Preencha as informações para registrar a oportunidade no fluxo comercial e atribuir o responsável inicial.
+          </p>
+        </div>
+
+        <!-- Header Action Buttons -->
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <button class="btn btn-outline-secondary btn-sm px-3 d-flex align-items-center gap-1" onclick="history.back()" type="button">
+            <span class="material-symbols-outlined fs-sm">arrow_back</span>
+            <span>Cancelar</span>
+          </button>
+          <button class="btn btn-outline-primary btn-sm px-3 d-flex align-items-center gap-1" onclick="submitLeadForm(true)" type="button">
+            <span class="material-symbols-outlined fs-sm">flash_on</span>
+            <span>Salvar e Iniciar</span>
+          </button>
+          <button class="btn btn-primary btn-sm px-3 d-flex align-items-center gap-1 shadow-sm" onclick="submitLeadForm(false)" type="button">
+            <span class="material-symbols-outlined fs-sm">save</span>
+            <span>Salvar Lead</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Workspace: Form Column (8 cols) + Preview Column (4 cols) -->
+      <div class="row g-4">
+        
+        <!-- Primary Form Flow (8 Cols) -->
+        <div class="col-12 col-lg-8">
+          <form id="leadCreationForm" onsubmit="event.preventDefault(); submitLeadForm(false);">
+            
+            <!-- BLOCK 1: Client & Contact Identity -->
+            <section class="crm-card p-3 p-md-4 mb-4">
+              <div class="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="crm-block-icon primary">
+                    <span class="material-symbols-outlined fs-md">person</span>
+                  </div>
+                  <div>
+                    <h2 class="h6 fw-bold mb-0 text-dark">1. Dados do Cliente e Contato</h2>
+                    <span class="text-secondary small">Informações básicas do solicitante ou pessoa jurídica</span>
+                  </div>
+                </div>
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Obrigatório</span>
+              </div>
+
+              <div class="row g-3">
+                <!-- Full Name / Business Name -->
+                <div class="col-12">
+                  <label class="form-label small fw-semibold text-dark" for="leadName">
+                    Nome Completo ou Razão Social <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white text-secondary">
+                      <span class="material-symbols-outlined fs-md">badge</span>
+                    </span>
+                    <input class="form-control" id="leadName" name="leadName" oninput="updatePreview()" placeholder="Ex: Ana Maria Silva ou Tech Solutions Ltda" required type="text">
+                  </div>
+                </div>
+
+                <!-- Email Address with validation status -->
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center justify-content-between mb-1">
+                    <label class="form-label small fw-semibold text-dark mb-0" for="leadEmail">
+                      E-mail Corporativo <span class="text-danger">*</span>
+                    </label>
+                    <span class="small text-secondary" id="emailStatusBadge">
+                      <span class="status-pulse-dot me-1"></span> Validação ativa
+                    </span>
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white text-secondary">
+                      <span class="material-symbols-outlined fs-md">mail</span>
+                    </span>
+                    <input class="form-control" id="leadEmail" name="leadEmail" oninput="validateEmailField(this); updatePreview();" placeholder="cliente@empresa.com.br" required type="email">
+                  </div>
+                </div>
+
+                <!-- Phone / WhatsApp with mask -->
+                <div class="col-12 col-md-6">
+                  <label class="form-label small fw-semibold text-dark" for="leadPhone">
+                    Telefone / WhatsApp <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white text-secondary">
+                      <span class="material-symbols-outlined fs-md">phone</span>
+                    </span>
+                    <input class="form-control" id="leadPhone" maxlength="15" name="leadPhone" oninput="maskPhone(this); updatePreview();" placeholder="(11) 98765-4321" required type="tel">
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- BLOCK 2: Origin & Initial Triage -->
+            <section class="crm-card p-3 p-md-4 mb-4">
+              <div class="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="crm-block-icon primary">
+                    <span class="material-symbols-outlined fs-md">hub</span>
+                  </div>
+                  <div>
+                    <h2 class="h6 fw-bold mb-0 text-dark">2. Origem e Triagem Inicial</h2>
+                    <span class="text-secondary small">Selecione o canal captado, urgência e responsável técnico</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Channel Selection Cards (Mobile-First 2 cols, sm 4 cols) -->
+              <div class="mb-3">
+                <label class="form-label small fw-semibold text-dark">
+                  Canal de Origem <span class="text-danger">*</span>
+                </label>
+                <div class="row row-cols-2 row-cols-sm-4 g-2" id="channelSelectorGroup">
+                  <!-- WhatsApp -->
+                  <div class="col">
+                    <button class="crm-channel-btn active" data-channel="WhatsApp" onclick="selectChannel(this, 'WhatsApp')" type="button">
+                      <div class="crm-channel-icon">
+                        <span class="material-symbols-outlined fs-sm">chat</span>
+                      </div>
+                      <div class="d-flex flex-column text-start">
+                        <span class="small fw-bold">WhatsApp</span>
+                        <span class="text-secondary small">Direto / API</span>
+                      </div>
+                    </button>
+                  </div>
+                  <!-- Instagram -->
+                  <div class="col">
+                    <button class="crm-channel-btn" data-channel="Instagram" onclick="selectChannel(this, 'Instagram')" type="button">
+                      <div class="crm-channel-icon">
+                        <span class="material-symbols-outlined fs-sm">photo_camera</span>
+                      </div>
+                      <div class="d-flex flex-column text-start">
+                        <span class="small fw-bold">Instagram</span>
+                        <span class="text-secondary small">Direct / Ads</span>
+                      </div>
+                    </button>
+                  </div>
+                  <!-- Email -->
+                  <div class="col">
+                    <button class="crm-channel-btn" data-channel="E-mail" onclick="selectChannel(this, 'E-mail')" type="button">
+                      <div class="crm-channel-icon">
+                        <span class="material-symbols-outlined fs-sm">mail</span>
+                      </div>
+                      <div class="d-flex flex-column text-start">
+                        <span class="small fw-bold">E-mail</span>
+                        <span class="text-secondary small">Inbound</span>
+                      </div>
+                    </button>
+                  </div>
+                  <!-- Telefone -->
+                  <div class="col">
+                    <button class="crm-channel-btn" data-channel="Telefone" onclick="selectChannel(this, 'Telefone')" type="button">
+                      <div class="crm-channel-icon">
+                        <span class="material-symbols-outlined fs-sm">call</span>
+                      </div>
+                      <div class="d-flex flex-column text-start">
+                        <span class="small fw-bold">Telefone</span>
+                        <span class="text-secondary small">Voz</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <input id="selectedChannelInput" name="channel" type="hidden" value="WhatsApp">
+              </div>
+
+              <!-- Priority & Initial Assignee Grid -->
+              <div class="row g-3 pt-2">
+                <!-- Priority Chips -->
+                <div class="col-12 col-md-6">
+                  <label class="form-label small fw-semibold text-dark">
+                    Grau de Prioridade <span class="text-danger">*</span>
+                  </label>
+                  <div class="row g-2" id="priorityGroup">
+                    <div class="col-4">
+                      <button class="crm-priority-btn" data-priority="Baixa" onclick="selectPriority(this, 'Baixa')" type="button">
+                        <span class="status-pulse-dot me-1"></span> Baixa
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <button class="crm-priority-btn active" data-priority="Média" onclick="selectPriority(this, 'Média')" type="button">
+                        <span class="status-pulse-dot warning me-1"></span> Média
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <button class="crm-priority-btn" data-priority="Alta" onclick="selectPriority(this, 'Alta')" type="button">
+                        <span class="status-pulse-dot danger me-1"></span> Alta
+                      </button>
+                    </div>
+                  </div>
+                  <div class="text-secondary small d-flex align-items-center gap-1 mt-2" id="slaNote">
+                    <span class="material-symbols-outlined fs-sm text-warning">schedule</span>
+                    <span>SLA Previsto: Atendimento em até <strong class="text-dark">1 hora</strong></span>
+                  </div>
+                  <input id="selectedPriorityInput" name="priority" type="hidden" value="Média">
+                </div>
+
+                <!-- Responsável Inicial -->
+                <div class="col-12 col-md-6">
+                  <label class="form-label small fw-semibold text-dark" for="assignedRep">
+                    Captador / Responsável Inicial <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white text-secondary">
+                      <span class="material-symbols-outlined fs-md">support_agent</span>
+                    </span>
+                    <select class="form-select" id="assignedRep" name="assignedRep" onchange="updatePreview()">
+                      <option value="Leandro Larson" selected>Leandro Larson (Gestor Comercial)</option>
+                      <option value="Carlos Souza">Carlos Souza (Atendente Comercial)</option>
+                      <option value="Beatriz Lima">Beatriz Lima (Atendente Comercial)</option>
+                      <option value="Fila Automática">Fila de Espera (Distribuição Automática)</option>
+                    </select>
+                  </div>
+                  <span class="text-muted small d-block mt-1">Notificação em tempo real enviada ao atendente</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- BLOCK 3: Address & Location (ViaCEP Integration) -->
+            <section class="crm-card p-3 p-md-4 mb-4">
+              <div class="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="crm-block-icon teal">
+                    <span class="material-symbols-outlined fs-md">pin_drop</span>
+                  </div>
+                  <div>
+                    <h2 class="h6 fw-bold mb-0 text-dark">3. Endereço &amp; Localização (ViaCEP)</h2>
+                    <span class="text-secondary small">Consulta cadastral rápida de endereço pelo Código Postal</span>
+                  </div>
+                </div>
+                <span class="badge bg-success-subtle text-success border border-success-subtle d-flex align-items-center gap-1">
+                  <span class="status-pulse-dot success"></span> ViaCEP Ativa
+                </span>
+              </div>
+
+              <!-- CEP Lookup Row -->
+              <div class="row g-3 align-items-end mb-3">
+                <div class="col-12 col-sm-6 col-md-5">
+                  <label class="form-label small fw-semibold text-dark" for="cepInput">
+                    CEP <span class="text-muted fw-normal">(Auto-preenchimento)</span>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white text-secondary">
+                      <span class="material-symbols-outlined fs-md">search</span>
+                    </span>
+                    <input class="form-control" id="cepInput" maxlength="9" name="cep" oninput="maskCEP(this)" placeholder="01001-000" type="text">
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-1" id="btnFetchCep" onclick="searchViaCEP()" type="button">
+                    <span class="material-symbols-outlined fs-sm">sync</span>
+                    <span>Buscar CEP</span>
+                  </button>
+                </div>
+                <div class="col-12 col-md-3">
+                  <span class="text-secondary small d-block" id="cepFeedback">Digite 8 dígitos para consultar</span>
+                </div>
+              </div>
+
+              <!-- Auto-Filled Address Fields Grid -->
+              <div class="row g-3">
+                <div class="col-12 col-md-8">
+                  <label class="form-label small text-secondary" for="addressStreet">Logradouro / Rua</label>
+                  <input class="form-control" id="addressStreet" name="street" oninput="updatePreview()" placeholder="Ex: Praça da Sé" type="text">
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label small text-secondary" for="addressNumber">Número</label>
+                  <input class="form-control" id="addressNumber" name="number" placeholder="100" type="text">
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label small text-secondary" for="addressComplement">Complemento</label>
+                  <input class="form-control" id="addressComplement" name="complement" placeholder="Sala 402, Bloco B" type="text">
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label small text-secondary" for="addressNeighborhood">Bairro</label>
+                  <input class="form-control" id="addressNeighborhood" name="neighborhood" placeholder="Centro" type="text">
+                </div>
+                <div class="col-8 col-md-3">
+                  <label class="form-label small text-secondary" for="addressCity">Cidade</label>
+                  <input class="form-control" id="addressCity" name="city" oninput="updatePreview()" placeholder="São Paulo" type="text">
+                </div>
+                <div class="col-4 col-md-1">
+                  <label class="form-label small text-secondary" for="addressState">UF</label>
+                  <input class="form-control text-uppercase text-center" id="addressState" maxlength="2" name="state" placeholder="SP" type="text">
+                </div>
+              </div>
+            </section>
+
+            <!-- BLOCK 4: Commercial Initial Details -->
+            <section class="crm-card p-3 p-md-4 mb-4">
+              <div class="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="crm-block-icon purple">
+                    <span class="material-symbols-outlined fs-md">monetization_on</span>
+                  </div>
+                  <div>
+                    <h2 class="h6 fw-bold mb-0 text-dark">4. Detalhes Comerciais Iniciais</h2>
+                    <span class="text-secondary small">Parâmetros financeiros preliminares e narrativa do lead</span>
+                  </div>
+                </div>
+                <span class="badge bg-light text-secondary border">Opcional</span>
+              </div>
+
+              <div class="row g-3">
+                <!-- Initial Stage -->
+                <div class="col-12 col-md-6">
+                  <label class="form-label small fw-semibold text-dark" for="initialStage">Estágio Inicial no Funil</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white text-secondary">
+                      <span class="material-symbols-outlined fs-md">view_column</span>
+                    </span>
+                    <select class="form-select" id="initialStage" name="stage" onchange="updatePreview()">
+                      <option value="Novo" selected>Novo (Triagem Inicial)</option>
+                      <option value="Contato">Contato Realizado</option>
+                      <option value="Orçamento">Orçamento / Proposta</option>
+                      <option value="Negociação">Negociação Direta</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Estimated Value -->
+                <div class="col-12 col-md-6">
+                  <label class="form-label small fw-semibold text-dark" for="estimatedValue">Valor Estimado da Oportunidade</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white text-secondary fw-semibold">R$</span>
+                    <input class="form-control" id="estimatedValue" name="estimatedValue" oninput="maskCurrency(this); updatePreview();" placeholder="3.500,00" type="text">
+                  </div>
+                </div>
+
+                <!-- Notes / Narrative -->
+                <div class="col-12">
+                  <label class="form-label small fw-semibold text-dark" for="initialNotes">Observações Iniciais / Primeiro Relato do Cliente</label>
+                  <textarea class="form-control" id="initialNotes" name="notes" placeholder="Descreva a necessidade expressa pelo cliente no primeiro contato, restrições operacionais ou interesse em produto específico..." rows="4"></textarea>
+                  <div class="d-flex justify-content-between align-items-center text-secondary small mt-1">
+                    <span>Esta nota ficará fixada no topo da timeline de atendimento</span>
+                    <span id="charCount">0 / 500 caracteres</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Sticky Floating Action Bar for Form Submission -->
+            <div class="crm-sticky-action-bar d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 mb-4">
+              <div class="d-flex align-items-center gap-2">
+                <span class="status-pulse-dot warning"></span>
+                <span class="text-secondary small">Preencha nome, e-mail e telefone para finalizar</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 w-100 w-sm-auto justify-content-end">
+                <button class="btn btn-outline-secondary btn-sm" onclick="resetLeadForm()" type="button">
+                  Limpar
+                </button>
+                <button class="btn btn-light btn-sm border d-flex align-items-center gap-1" onclick="saveDraft()" type="button">
+                  <span class="material-symbols-outlined fs-sm">drafts</span>
+                  <span>Rascunho</span>
+                </button>
+                <button class="btn btn-primary btn-sm d-flex align-items-center gap-1 fw-semibold shadow-sm" id="submitLeadBtn" type="submit">
+                  <span class="material-symbols-outlined fs-sm">add_circle</span>
+                  <span>Cadastrar Lead</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar 4 Columns: Live Pipeline Preview & SDR Quick Best Practices -->
+        <aside class="col-12 col-lg-4">
+          
+          <!-- LIVE KANBAN CARD PREVIEW -->
+          <div class="crm-card p-3 p-md-4 mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined text-primary fs-md">visibility</span>
+                <h3 class="h6 fw-bold mb-0 text-dark">Prévia do Card</h3>
+              </div>
+              <span class="badge bg-light text-secondary border text-uppercase small">Pipeline Live</span>
+            </div>
+            <p class="text-secondary small mb-3">
+              Veja exatamente como este lead aparecerá na coluna do Kanban de Vendas assim que registrado:
+            </p>
+
+            <!-- Mock Kanban Item Card -->
+            <div class="crm-kanban-preview-card">
+              <!-- Card Header: Origin + Priority -->
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill d-flex align-items-center gap-1" id="previewChannelBadge">
+                    <span class="material-symbols-outlined fs-sm">chat</span>
+                    <span id="previewChannelText">WhatsApp</span>
+                  </span>
+                  <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill" id="previewStageBadge">
+                    Novo
+                  </span>
+                </div>
+                <span class="badge bg-warning-subtle text-warning rounded-pill" id="previewPriorityBadge">
+                  Média
+                </span>
+              </div>
+
+              <!-- Title & Location -->
+              <div class="mb-3">
+                <h4 class="h6 fw-bold text-dark text-truncate mb-1" id="previewLeadName">
+                  Nome do Lead
+                </h4>
+                <div class="text-secondary small d-flex align-items-center gap-1" id="previewLocation">
+                  <span class="material-symbols-outlined fs-sm text-secondary">location_on</span>
+                  <span id="previewLocationText">São Paulo, SP</span>
+                </div>
+              </div>
+
+              <!-- Expected Value & SLA status -->
+              <div class="d-flex align-items-center justify-content-between pt-2 border-top mb-3">
+                <div>
+                  <span class="text-secondary small d-block">Valor Previsto</span>
+                  <span class="fw-bold text-primary" id="previewValue">R$ 3.500,00</span>
+                </div>
+                <div class="d-flex align-items-center gap-1 text-secondary small">
+                  <span class="material-symbols-outlined fs-sm">timer</span>
+                  <span>Fila: 0 min</span>
+                </div>
+              </div>
+
+              <!-- Bottom Assignee Row -->
+              <div class="d-flex align-items-center justify-content-between p-2 rounded bg-white border">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="crm-avatar crm-avatar-sm crm-avatar-primary" id="previewRepAvatar">
+                    LL
+                  </div>
+                  <span class="small fw-semibold text-dark text-truncate" id="previewRepName">
+                    Leandro Larson
+                  </span>
+                </div>
+                <span class="material-symbols-outlined fs-sm text-secondary">chevron_right</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- OPERATIONAL SLA METRIC WIDGET -->
+          <div class="crm-card p-3 p-md-4 mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="text-secondary small fw-semibold text-uppercase">Velocidade de Resposta</span>
+              <span class="status-pulse-dot success"></span>
+            </div>
+            <div class="d-flex align-items-baseline gap-2 mb-2">
+              <span class="display-6 fw-bold text-dark">&lt; 15m</span>
+              <span class="badge bg-success-subtle text-success">Meta SLA</span>
+            </div>
+            <p class="text-secondary small mb-3">
+              Leads contatados nos primeiros 15 minutos possuem taxa de conversão <strong>3,8x superior</strong>.
+            </p>
+            <div class="p-2 rounded bg-light border small text-secondary d-flex align-items-center gap-2">
+              <span class="material-symbols-outlined text-primary fs-md">timer</span>
+              <span>Cronometragem automática iniciada na primeira mensagem enviada.</span>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap 5.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- App Shell & Screen Scripts -->
+  <script src="js/app-shell.js"></script>
+  <script src="js/new-lead.js"></script>
+</body>
+</html>

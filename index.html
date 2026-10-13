@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Atendimento &amp; Vendas - Identificação do Atendente</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  
+  <!-- Custom CSS (External Stylesheets - No Inline Styles) -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <!-- Main Login Screen Wrapper (Mobile-First) -->
+  <main class="crm-login-wrapper">
+    
+    <!-- System Branding Header -->
+    <header class="text-center mb-4">
+      <div class="crm-login-brand-icon">
+        <span class="material-symbols-outlined fs-lg">bolt</span>
+      </div>
+      <h1 class="h3 fw-bold mb-1 text-dark">CRM Atendimento &amp; Vendas</h1>
+      <p class="text-secondary small mb-0 fw-medium">Central de Captação Multicanal &amp; Gestão Comercial</p>
+    </header>
+
+    <!-- Authentication Card -->
+    <section class="crm-login-card">
+      
+      <!-- Card Heading -->
+      <div class="border-bottom pb-3 mb-4">
+        <h2 class="h5 fw-bold mb-1 text-dark">Identificação do Atendente</h2>
+        <p class="text-secondary small mb-0">
+          Selecione o seu perfil de usuário para iniciar sua sessão e vincular o histórico e a cronometragem de atendimentos.
+        </p>
+      </div>
+
+      <!-- Identification Form -->
+      <form id="loginForm" class="d-flex flex-col gap-3 flex-column">
+        
+        <!-- User Selection Section -->
+        <div>
+          <label class="form-label text-uppercase text-secondary fw-semibold small" for="attendantSelect">
+            Selecione seu Nome / Função
+          </label>
+          <select class="form-select py-2 px-3" id="attendantSelect" name="attendant" required>
+            <option value="carlos_souza" data-role="Atendente Comercial" data-initials="CS" data-team="Vendas &amp; Suporte">
+              Carlos Souza — Atendente Comercial
+            </option>
+            <option value="beatriz_lima" data-role="Captadora de Leads" data-initials="BL" data-team="SDR &amp; Prospecção">
+              Beatriz Lima — Captadora de Leads
+            </option>
+            <option value="leandro_larson" data-role="Gestor Comercial" data-initials="LL" data-team="Supervisão Geral" selected>
+              Leandro Larson — Gestor Comercial
+            </option>
+            <option value="joao_silva" data-role="Comercial" data-initials="JS" data-team="Vendas Diretas">
+              João Silva — Comercial
+            </option>
+          </select>
+        </div>
+
+        <!-- Selected Attendant Preview Badge Card -->
+        <div class="crm-badge-preview-card d-flex align-items-center justify-content-between" id="profileBadgeCard">
+          <div class="d-flex align-items-center gap-3">
+            <!-- Dynamic Avatar Initials -->
+            <div class="crm-avatar crm-avatar-primary shadow-sm" id="userAvatar">
+              LL
+            </div>
+            <div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="fw-bold small text-dark" id="userName">Leandro Larson</span>
+                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill">
+                  <span class="status-pulse-dot success me-1"></span> Ativo
+                </span>
+              </div>
+              <p class="text-secondary small mb-0" id="userRoleDetail">Perfil: Gestor Comercial • Atribuição ativa</p>
+            </div>
+          </div>
+          <div class="d-none d-sm-block text-end">
+            <span class="text-muted text-uppercase fw-semibold d-block small">Setor</span>
+            <span class="fw-semibold text-secondary small" id="userTeam">Supervisão</span>
+          </div>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2 pt-1">
+          <div class="form-check mb-0">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label text-secondary small" for="rememberMe">
+              Lembrar meu usuário neste dispositivo
+            </label>
+          </div>
+          <a href="#" class="text-primary text-decoration-none small fw-medium" title="Consulte seu supervisor se seu nome não estiver listado">
+            Não encontrou seu perfil?
+          </a>
+        </div>
+
+        <!-- Action Button -->
+        <div class="pt-2">
+          <button class="btn btn-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold shadow-sm" type="submit">
+            <span>Entrar no Sistema</span>
+            <span class="material-symbols-outlined fs-sm">arrow_forward</span>
+          </button>
+        </div>
+
+        <!-- Direct Navigation Options -->
+        <div class="d-flex justify-content-center gap-2 pt-1">
+          <a href="dashboard.html" class="btn btn-light btn-sm text-secondary border">Ver Dashboard</a>
+          <a href="lead-manager.html" class="btn btn-light btn-sm text-secondary border">Ver Chamados</a>
+          <a href="new-lead.html" class="btn btn-light btn-sm text-secondary border">+ Novo Lead</a>
+        </div>
+      </form>
+
+      <!-- Feedback Toast Notification Container -->
+      <div class="alert alert-success d-none mt-3 mb-0 d-flex align-items-center gap-2 small" id="statusToast" role="alert">
+        <span class="material-symbols-outlined text-success">check_circle</span>
+        <span id="statusMessage">Sessão iniciada com sucesso. Redirecionando...</span>
+      </div>
+
+      <!-- Quick Channels Status Indicator inside card footer -->
+      <div class="mt-4 pt-3 border-top">
+        <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2 text-secondary small">
+          <span class="fw-medium">Canais sincronizados:</span>
+          <div class="d-flex align-items-center flex-wrap gap-3">
+            <span class="crm-channel-pill" title="WhatsApp Gateway Online">
+              <span class="status-pulse-dot success"></span> WhatsApp
+            </span>
+            <span class="crm-channel-pill" title="Instagram Direct Conectado">
+              <span class="status-pulse-dot success"></span> Instagram
+            </span>
+            <span class="crm-channel-pill" title="Servidor SMTP/IMAP Online">
+              <span class="status-pulse-dot success"></span> E-mail
+            </span>
+            <span class="crm-channel-pill" title="Central VoIP Ativa">
+              <span class="status-pulse-dot success"></span> Voz
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page Footer -->
+    <footer class="crm-login-footer">
+      <div class="container text-center">
+        <span>© 2026 CRM Atendimento &amp; Vendas</span>
+        <span class="mx-2 d-none d-sm-inline text-muted">•</span>
+        <span>Versão <strong>v1.0.0</strong></span>
+        <span class="mx-2 d-none d-sm-inline text-muted">•</span>
+        <span class="text-secondary">Ambiente Seguro &amp; Monitorado</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Bootstrap 5.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Screen Logic -->
+  <script src="js/login.js"></script>
+</body>
+</html>

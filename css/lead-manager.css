@@ -1,0 +1,130 @@
+/* ==========================================================================
+   CRM ATENDIMENTO & VENDAS - LEAD MANAGER SCREEN STYLES (MOBILE-FIRST)
+   ========================================================================== */
+
+/* KPI Cards on Mobile */
+.crm-kpi-scroller {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.crm-kpi-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.crm-kpi-card {
+  background-color: var(--crm-bg-card);
+  border: 1px solid var(--crm-border-color);
+  border-radius: 0.875rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 220px;
+  flex: 1 0 auto;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 992px) {
+  .crm-kpi-scroller {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+  .crm-kpi-card {
+    min-width: 0;
+  }
+}
+
+.crm-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.crm-kpi-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.crm-kpi-icon.info {
+  background-color: var(--crm-info-subtle);
+  color: var(--crm-info);
+}
+
+.crm-kpi-icon.warning {
+  background-color: var(--crm-warning-subtle);
+  color: var(--crm-warning);
+}
+
+.crm-kpi-icon.primary {
+  background-color: var(--crm-primary-subtle);
+  color: var(--crm-primary);
+}
+
+.crm-kpi-icon.success {
+  background-color: var(--crm-success-subtle);
+  color: var(--crm-success);
+}
+
+/* Filter toolbar styling */
+.crm-filter-toolbar {
+  background-color: var(--crm-bg-card);
+  border: 1px solid var(--crm-border-color);
+  border-radius: 0.875rem;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+/* Table Card Refinements */
+.crm-table-card {
+  background-color: var(--crm-bg-card);
+  border: 1px solid var(--crm-border-color);
+  border-radius: 0.875rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+.crm-table-card .table thead th {
+  background-color: var(--crm-bg-body);
+  color: var(--crm-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--crm-border-color);
+  white-space: nowrap;
+}
+
+.crm-table-card .table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--crm-border-color);
+  font-size: 0.875rem;
+}
+
+.crm-table-card .table tbody tr:hover {
+  background-color: rgba(248, 250, 252, 0.8);
+}
+
+/* Action buttons inside table rows */
+.crm-table-action-btn {
+  height: 32px;
+  padding: 0 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
