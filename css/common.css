@@ -205,8 +205,23 @@ a {
 }
 
 .crm-main-content {
-  min-height: calc(100vh - var(--crm-header-height));
+  flex: 1 0 auto;
+  min-height: 0;
   padding: 1rem;
+}
+
+.crm-has-sidebar {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.crm-app-footer {
+  flex-shrink: 0;
+  padding: 1rem;
+  border-top: 1px solid var(--crm-border-color);
+  color: var(--crm-text-secondary);
+  font-size: 0.75rem;
 }
 
 /* Pulse status indicators */
@@ -275,5 +290,11 @@ a {
   .crm-has-sidebar .crm-main-content {
     margin-left: var(--crm-sidebar-width);
     padding: 2rem;
+  }
+
+  .crm-has-sidebar .crm-app-footer {
+    width: calc(100% - var(--crm-sidebar-width));
+    margin-left: var(--crm-sidebar-width);
+    padding: 1rem 2rem;
   }
 }
