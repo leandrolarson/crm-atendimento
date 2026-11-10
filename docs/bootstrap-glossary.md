@@ -5,12 +5,12 @@ ser atualizado conforme novas telas e componentes forem adicionados.
 
 ## Contexto atual
 
-- **Versão:** Bootstrap 5.3.8, carregado pelo CDN em `index.html`.
-- **Escopo:** a página `index.html` é a primeira página ativa documentada.
-- **JavaScript:** a página ainda não carrega o JavaScript do Bootstrap nem código
-  JavaScript próprio. Os controles existentes são de apresentação e HTML nativo.
+- **Versão:** Bootstrap 5.3.8, carregado pelo CDN em `index.html`, `dashboard.html`, `lead-manager.html` e `new-lead.html`.
+- **Escopo atual:** páginas ativas documentadas: `index.html`, `dashboard.html`, `lead-manager.html` e `new-lead.html`.
+- **JavaScript:** as páginas ainda não carregam JavaScript do Bootstrap nem lógica de negócio; os controles existentes são de apresentação e HTML nativo.
 - **Estilos próprios:** `css/styles.css` define tokens globais e ajustes do
-  Bootstrap; `css/login.css` define o layout específico da home/login.
+  Bootstrap; `css/login.css`, `css/dashboard.css`, `css/lead-manager.css` e
+  `css/new-lead.css` definem os layouts específicos de cada tela.
 
 ## Classes usadas em `index.html`
 
@@ -55,8 +55,6 @@ ser atualizado conforme novas telas e componentes forem adicionados.
 | `container` | Mantém a proporção do conteúdo em telas maiores quando necessário. |
 | `text-*` | Classes auxiliares para cor de texto e informação em títulos e descrições. |
 | `fw-*` | Ajusta a densidade tipográfica em títulos, badges e textos de destaque. |
-
-## Breakpoints usados no Grid
 
 ## Breakpoints usados no Grid
 
