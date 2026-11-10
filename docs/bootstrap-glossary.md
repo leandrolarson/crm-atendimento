@@ -73,12 +73,30 @@ As classes de coluna acumulam seus efeitos a partir do breakpoint indicado:
 Por exemplo, `col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5` faz o cartão ocupar
 a largura total no mobile e reduzir sua proporção em telas maiores.
 
+## Classes usadas em `lead-manager.html`
+
+| Classe | Efeito |
+|---|---|
+| `d-flex` | Organiza o layout da barra de busca, ações e blocos de conteúdo. |
+| `align-items-center` | Centraliza verticalmente itens em linhas e grupos de controle. |
+| `justify-content-between` | Distribui espaço entre a barra de busca e os elementos de ação. |
+| `btn` | Base visual e funcionalidade de botões primários e secundários. |
+| `btn-primary` | Destaca a ação principal de criação de um novo lead. |
+| `btn-light` | Aplica botão neutro para ações de exportação e alternância de visualização. |
+| `form-select` | Define o estilo dos campos de filtro e seleção por canal e etapa. |
+| `table` | Estrutura a tabela de leads com linhas e cabeçalhos. |
+| `thead`, `tbody`, `tr`, `th`, `td` | Definem as colunas e os dados da listagem. |
+| `visually-hidden` | Mantém títulos de tabela acessíveis para leitores de tela sem exibir visualmente. |
+| `input` | Mantém os campos de busca e filtro com aparência consistente. |
+| `w-*`, `h-*` | Ainda não usados em larga escala; a página prioriza tamanhos por CSS próprio. |
+
 ## Convenções para as próximas páginas
 
 - Registrar somente classes Bootstrap efetivamente usadas no HTML.
 - Descrever o efeito no contexto da página, especialmente quando combinações
   de classes definem o layout.
-- Separar classes Bootstrap de classes próprias, como `login-card` e
-  `login-page__content`; estas últimas pertencem aos arquivos CSS do projeto.
+- Separar classes Bootstrap de classes próprias, como `login-card`,
+  `dashboard-sidebar__item` e `lead-manager-stat`; estas pertencem aos arquivos
+  CSS do projeto.
 - Registrar componentes JavaScript do Bootstrap quando forem adicionados e
   indicar o arquivo ou a página onde são usados.
