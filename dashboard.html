@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Dashboard operacional do CRM Atendimento e Vendas com métricas de leads, atendimento e desempenho comercial."
+    >
+    <meta name="theme-color" content="#081b2d">
+    <title>Dashboard | CRM Atendimento &amp; Vendas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+  </head>
+  <body class="dashboard-page">
+    <div class="dashboard-shell">
+      <aside class="dashboard-sidebar" aria-label="Menu principal">
+        <div class="dashboard-sidebar__brand">
+          <span class="dashboard-brand__mark" aria-hidden="true">N</span>
+          <div class="dashboard-brand__text">
+            <strong>Nexus CRM</strong>
+            <span>Atendimento &amp; Vendas</span>
+          </div>
+        </div>
+
+        <nav class="dashboard-sidebar__nav" aria-label="Navegação principal">
+          <a class="dashboard-sidebar__item dashboard-sidebar__item--active" href="dashboard.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4h7v7H4zm9 0h7v4h-7zm0 6h7v10h-7zM4 13h7v7H4z"/>
+            </svg>
+            <span>Dashboard</span>
+          </a>
+          <a class="dashboard-sidebar__item" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5zm2 0h12M8 10h8M8 14h5"/>
+            </svg>
+            <span>Chamados / Leads</span>
+          </a>
+          <a class="dashboard-sidebar__item" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            <span>Novo Lead</span>
+          </a>
+          <a class="dashboard-sidebar__item" href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 20v-1a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v1M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm8 8v-1a4 4 0 0 0-3-3.87M18 4.01V4m.5 7.5a4 4 0 0 1 0 7.99"/>
+            </svg>
+            <span>Trocar Perfil / Login</span>
+          </a>
+        </nav>
+
+        <div class="dashboard-sidebar__status" aria-label="Status da fila">
+          <span class="status-dot status-dot--success" aria-hidden="true"></span>
+          <div>
+            <strong>Fila Ativa</strong>
+            <small>8 em espera</small>
+          </div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v9.5m0 0 3.5-3.5M12 12.5 8.5 9M5 16.5h14"/>
+          </svg>
+        </div>
+      </aside>
+
+      <div class="dashboard-main">
+        <header class="dashboard-header">
+          <div class="dashboard-header__search d-flex align-items-center">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6"/>
+              <path d="M16 16l4 4"/>
+            </svg>
+            <input
+              type="search"
+              aria-label="Buscar lead, chamado, protocolo ou CPF"
+              placeholder="Buscar lead, chamado, protocolo ou CPF..."
+            >
+          </div>
+
+          <div class="dashboard-header__actions">
+            <button class="dashboard-header__icon" type="button" aria-label="Notificações">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5m6 0a3 3 0 1 1-6 0"/>
+              </svg>
+              <span class="dashboard-header__alert" aria-hidden="true"></span>
+            </button>
+
+            <div class="dashboard-user" aria-label="Perfil do usuário">
+              <div class="dashboard-user__meta">
+                <strong>Leandro Larson</strong>
+                <span>Gestor Comercial</span>
+              </div>
+              <span class="dashboard-user__avatar">LL</span>
+            </div>
+          </div>
+        </header>
+
+        <main class="dashboard-content">
+          <div class="dashboard-toolbar">
+            <div class="dashboard-toolbar__meta">
+              <nav class="dashboard-breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Início</a>
+                <span>/</span>
+                <a href="dashboard.html">Dashboard</a>
+                <span>/</span>
+                <strong>Visão Geral da Operação</strong>
+              </nav>
+              <h1>Dashboard Operacional &amp; Monitoramento</h1>
+              <p>
+                Acompanhe indicadores de volume de leads, tempo dedicado de atendimento
+                por colaborador e distribuição no funil de vendas.
+              </p>
+            </div>
+
+            <div class="dashboard-toolbar__controls">
+              <span class="pill pill--live">
+                <span class="status-dot status-dot--success" aria-hidden="true"></span>
+                Conectado
+              </span>
+              <span class="pill pill--soft">Este Mês (Ciclo V...</span>
+              <button type="button" class="btn btn-primary btn-dashboard">Atualizar</button>
+            </div>
+          </div>
+
+          <section class="stats-grid" aria-label="Indicadores principais">
+            <article class="stat-card">
+              <div class="stat-card__label">
+                <span>Total de Leads</span>
+                <span class="stat-card__icon" aria-hidden="true">↗</span>
+              </div>
+              <div class="stat-card__value">128</div>
+              <div class="stat-card__footer stat-card__footer--up">
+                <span class="trend trend--up">↗ 12%</span>
+                <small>vs. período anterior</small>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card__label">
+                <span>Nova Leads Hoje</span>
+                <span class="stat-card__icon" aria-hidden="true">✦</span>
+              </div>
+              <div class="stat-card__value">42</div>
+              <div class="stat-card__footer">
+                <span class="trend trend--up">↗ 8%</span>
+                <small>WhatsApp 58%</small>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card__label">
+                <span>Em Atendimento</span>
+                <span class="stat-card__icon" aria-hidden="true">◔</span>
+              </div>
+              <div class="stat-card__value">17</div>
+              <div class="stat-card__footer">
+                <span class="trend trend--neutral">Sessão: 18</span>
+                <small>ativos agora</small>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card__label">
+                <span>Vendas Fechadas</span>
+                <span class="stat-card__icon" aria-hidden="true">₣</span>
+              </div>
+              <div class="stat-card__value stat-card__value--money">R$ 85.400</div>
+              <div class="stat-card__footer stat-card__footer--up">
+                <span class="trend trend--up">↗ 85% da Meta</span>
+                <small>34 contratos</small>
+              </div>
+            </article>
+          </section>
+
+          <section class="panel panel--funnel" aria-labelledby="funil-title">
+            <div class="panel__heading">
+              <div>
+                <h2 id="funil-title">Leads por Estágio do Funil</h2>
+                <p>Distribuição quantitativa e monetária de negociações ativas</p>
+              </div>
+              <div class="panel__summary">
+                <span>Conversão: <strong>42,8%</strong></span>
+                <span>Volume Total: <strong>R$ 430.400</strong></span>
+              </div>
+            </div>
+
+            <div class="funnel-grid">
+              <article class="funnel-item funnel-item--new">
+                <span class="funnel-item__title">1. Novo (Triagem)</span>
+                <strong>42</strong>
+                <small>leads</small>
+                <em>Est.: R$ 12.000</em>
+              </article>
+              <article class="funnel-item funnel-item--quote">
+                <span class="funnel-item__title">2. Orçamento</span>
+                <strong>38</strong>
+                <small>leads</small>
+                <em>Est.: R$ 145.000</em>
+              </article>
+              <article class="funnel-item funnel-item--order">
+                <span class="funnel-item__title">3. Pedido</span>
+                <strong>24</strong>
+                <small>leads</small>
+                <em>Est.: R$ 88.000</em>
+              </article>
+              <article class="funnel-item funnel-item--closed">
+                <span class="funnel-item__title">4. Ganha / Fechada</span>
+                <strong>18</strong>
+                <small>vendas</small>
+                <em>Fatur.: R$ 85.400</em>
+              </article>
+              <article class="funnel-item funnel-item--lost">
+                <span class="funnel-item__title">5. Perdido</span>
+                <strong>6</strong>
+                <small>leads</small>
+                <em>Descarte / Preço</em>
+              </article>
+            </div>
+
+            <div class="funnel-legend" aria-label="Legenda do funil">
+              <span>Lead captado via WhatsApp/Canal...</span>
+              <span>Orçamento qualificado enviado</span>
+              <span>Faturamento de pedido &amp; contrato</span>
+              <span>Sem acompanhamento</span>
+            </div>
+          </section>
+
+          <div class="bottom-grid">
+            <section class="panel panel--times" aria-labelledby="atendimentos-title">
+              <div class="panel__heading panel__heading--compact">
+                <div>
+                  <h2 id="atendimentos-title">Tempo de Atendimento por Colaborador</h2>
+                  <p>Monitoramento em tempo real do cronômetro de chamados por atendente</p>
+                </div>
+                <span class="panel__meta">Total hoje: <strong>18h 32m</strong></span>
+              </div>
+
+              <div class="attendance-list">
+                <article class="attendance-item">
+                  <div class="attendance-item__avatar attendance-item__avatar--primary">JS</div>
+                  <div class="attendance-item__meta">
+                    <div class="attendance-item__title-row">
+                      <strong>João Silva</strong>
+                      <span class="pill pill--mini pill--live">Atendimento ativo</span>
+                    </div>
+                    <small>Comercial · 14 chamados hoje</small>
+                    <div class="progress-track"><span class="progress-fill progress-fill--blue" style="width: 88%"></span></div>
+                  </div>
+                  <time>04:32:12</time>
+                </article>
+
+                <article class="attendance-item">
+                  <div class="attendance-item__avatar attendance-item__avatar--purple">CS</div>
+                  <div class="attendance-item__meta">
+                    <div class="attendance-item__title-row">
+                      <strong>Carlos Souza</strong>
+                      <span class="pill pill--mini pill--warning">Disponível na fila</span>
+                    </div>
+                    <small>Vendas B2B · 11 chamados hoje</small>
+                    <div class="progress-track"><span class="progress-fill progress-fill--purple" style="width: 63%"></span></div>
+                  </div>
+                  <time>13:14:21</time>
+                </article>
+
+                <article class="attendance-item">
+                  <div class="attendance-item__avatar attendance-item__avatar--green">MO</div>
+                  <div class="attendance-item__meta">
+                    <div class="attendance-item__title-row">
+                      <strong>Maria Oliveira</strong>
+                      <span class="pill pill--mini pill--soft">Pausa técnica</span>
+                    </div>
+                    <small>Atendimento geral · 8 chamados hoje</small>
+                    <div class="progress-track"><span class="progress-fill progress-fill--green" style="width: 54%"></span></div>
+                  </div>
+                  <time>02:08:45</time>
+                </article>
+
+                <article class="attendance-item">
+                  <div class="attendance-item__avatar attendance-item__avatar--orange">BL</div>
+                  <div class="attendance-item__meta">
+                    <div class="attendance-item__title-row">
+                      <strong>Beatriz Lima</strong>
+                      <span class="pill pill--mini pill--live">Atendimento ativo</span>
+                    </div>
+                    <small>Prospecção · 6 chamados hoje</small>
+                    <div class="progress-track"><span class="progress-fill progress-fill--orange" style="width: 48%"></span></div>
+                  </div>
+                  <time>01:54:10</time>
+                </article>
+
+                <article class="attendance-item">
+                  <div class="attendance-item__avatar attendance-item__avatar--blue">LL</div>
+                  <div class="attendance-item__meta">
+                    <div class="attendance-item__title-row">
+                      <strong>Leandro Larson</strong>
+                      <span class="pill pill--mini pill--neutral">Suporte técnico</span>
+                    </div>
+                    <small>Escalas &amp; fechamentos · 4 chamados</small>
+                    <div class="progress-track"><span class="progress-fill progress-fill--slate" style="width: 36%"></span></div>
+                  </div>
+                  <time>11:15:30</time>
+                </article>
+              </div>
+
+              <div class="panel__footer-note">
+                <span>Maior produtividade operacional:</span>
+                <strong>João Silva</strong>
+                <small>(14 atendimentos)</small>
+              </div>
+            </section>
+
+            <aside class="panel panel--channels" aria-labelledby="canais-title">
+              <div class="panel__heading panel__heading--compact">
+                <div>
+                  <h2 id="canais-title">Canais de Entrada</h2>
+                </div>
+                <span class="panel__meta">Total: <strong>128</strong></span>
+              </div>
+
+              <ul class="channel-list" aria-label="Distribuição por canal">
+                <li>
+                  <span>WhatsApp Oficial</span>
+                  <strong>58%</strong>
+                </li>
+                <li>
+                  <span>Instagram Direct</span>
+                  <strong>22%</strong>
+                </li>
+                <li>
+                  <span>E-mail / Formulário</span>
+                  <strong>14%</strong>
+                </li>
+                <li>
+                  <span>Telefone / FAX</span>
+                  <strong>6%</strong>
+                </li>
+              </ul>
+
+              <div class="channel-info">
+                <h3>Alertas Críticos</h3>
+                <ul>
+                  <li>
+                    <span class="channel-info__name">Mariana Bastos</span>
+                    <span class="channel-info__time">18m</span>
+                  </li>
+                  <li>
+                    <span class="channel-info__name">Roberto Albuquerque</span>
+                    <span class="channel-info__time">22m</span>
+                  </li>
+                  <li>
+                    <span class="channel-info__name">Construção Alvorada</span>
+                    <span class="channel-info__time">14m</span>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+
+          <div class="dashboard-callout" aria-label="Tempo de atendimento ativo">
+            <div class="dashboard-callout__info">
+              <div class="dashboard-callout__icon" aria-hidden="true">◉</div>
+              <div>
+                <strong>Sua Sessão Ativa no Plantão</strong>
+                <small>Protocolo atual: #NX-8821 | Atendente: Carlos Silveira · Proposta Contratual</small>
+              </div>
+            </div>
+
+            <div class="dashboard-callout__status">
+              <span class="dashboard-callout__label">Cronômetro em aberto</span>
+              <div class="dashboard-callout__timer">00:24:16</div>
+            </div>
+
+            <div class="dashboard-callout__actions">
+              <button type="button" class="btn btn-primary btn-sm">Pausar</button>
+              <button type="button" class="btn btn-success btn-sm">Concluir</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

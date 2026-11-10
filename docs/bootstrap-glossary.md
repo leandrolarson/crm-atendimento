@@ -35,6 +35,29 @@ ser atualizado conforme novas telas e componentes forem adicionados.
 | `btn-lg` | Aumenta o tamanho do botão. |
 | `w-100` | Define a largura do elemento como 100% do elemento pai. |
 
+## Classes usadas em `dashboard.html`
+
+| Classe | Efeito |
+|---|---|
+| `d-flex` | Cria containers flexíveis para layout de barra superior, filtros e blocos de dados. |
+| `align-items-center` | Alinha verticalmente itens de uma linha flexível. |
+| `justify-content-between` | Distribui espaço entre itens de uma linha flexível. |
+| `gap-*` | Aplica espaçamento horizontal e vertical entre elementos em um container flexível. |
+| `btn` | Estrutura de botão reutilizada em ações secundárias e primárias. |
+| `btn-primary` | Aplica a cor principal para a ação destacada do dashboard. |
+| `btn-sm` | Reduz o tamanho do botão em áreas compactas, como o cronômetro ativo. |
+| `pill` | Produz badges de status para indicadores de conexão e atividade. |
+| `badge` | Bootstrap é usado em combinações com estilos próprios para microtextos de status. |
+| `form-control` | Mantém entrada de busca com visual consistente ao bootstrap. |
+| `nav` | Aplica a estrutura básica de navegação do sidebar. |
+| `row` | Estrutura de grade usada em componentes mais amplos e em futuras extensões. |
+| `col-*` | As colunas do grid continuam sendo a base para layouts responsivos e semântica do dashboard. |
+| `container` | Mantém a proporção do conteúdo em telas maiores quando necessário. |
+| `text-*` | Classes auxiliares para cor de texto e informação em títulos e descrições. |
+| `fw-*` | Ajusta a densidade tipográfica em títulos, badges e textos de destaque. |
+
+## Breakpoints usados no Grid
+
 ## Breakpoints usados no Grid
 
 As classes de coluna acumulam seus efeitos a partir do breakpoint indicado:

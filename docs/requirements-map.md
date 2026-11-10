@@ -19,12 +19,12 @@ funcionalidades da nova interface.
 
 | ID | Status | Evidência atual / próximo passo |
 |---|---|---|
-| 01 | Parcial | O README referencia um protótipo Stitch e há telas Antigravity arquivadas. A home/login foi validada em larguras mobile e desktop, mas falta registrar protótipos adaptáveis para as novas páginas. |
-| 02 | Atendido na home/login | `index.html` usa o Grid responsivo do Bootstrap 5.3: `container`, `row`, `col-12`, `col-sm-10`, `col-md-8`, `col-lg-6` e `col-xl-5`. |
-| 03 | Atendido na home/login | `css/login.css` usa CSS Grid em `.login-page` e media query mobile-first. O Bootstrap também fornece Flexbox para as linhas e colunas do Grid. |
-| 04 | Parcial | A página usa componentes CSS do Bootstrap, como `form-control`, `form-label` e `btn btn-primary`. Não há componente JavaScript do Bootstrap nessa página; adicionar apenas quando uma interação de interface justificar. |
-| 05 | Atendido na home/login | O layout usa unidades relativas como `rem`, `%`, `vw` e `svh`, além de `clamp()` para espaçamentos e tipografia fluidos. |
-| 06 | Parcial | `css/styles.css` define tokens para cores, tipografia, bordas e foco; a paleta é aplicada na home/login. Aplicar e revisar os mesmos padrões à medida que as outras páginas forem criadas. |
+| 01 | Parcial | O README referencia um protótipo Stitch e há telas Antigravity arquivadas. A home/login foi validada em larguras mobile e desktop e a nova dashboard também foi estruturada em layout responsivo, mas ainda falta registrar protótipos adaptáveis para as próximas páginas. |
+| 02 | Atendido na home/login e dashboard | `index.html` usa o Grid responsivo do Bootstrap 5.3: `container`, `row`, `col-12`, `col-sm-10`, `col-md-8`, `col-lg-6` e `col-xl-5`. A página `dashboard.html` amplia a aplicação do Grid com blocos em `d-flex`, `grid`, `panel` e variações responsivas de `stats-grid` e `bottom-grid`. |
+| 03 | Atendido na home/login e dashboard | `css/login.css` usa CSS Grid em `.login-page` e media query mobile-first. O dashboard usa CSS Grid em `.stats-grid`, `.funnel-grid` e `.bottom-grid`, com ajustes em `@media` para mobile e desktop. |
+| 04 | Parcial | A página usa componentes CSS do Bootstrap, como `form-control`, `btn btn-primary` e `pill`, além de elementos básicos de navegação e status. Não há componente JavaScript do Bootstrap nessa página; adicionar apenas quando uma interação de interface justificar. |
+| 05 | Atendido na home/login e dashboard | O layout usa unidades relativas como `rem`, `%`, `vw` e `svh`, além de `clamp()` para espaçamentos e tipografia fluidos. A dashboard também aplica espaçamento proporcional e responsividade em blocos de métricas e painéis. |
+| 06 | Parcial | `css/styles.css` define tokens para cores, tipografia, bordas e foco; a paleta é aplicada na home/login e também reforçada no dashboard. Revisar a consistência visual à medida que as outras páginas forem criadas. |
 | 07 | Pendente | Os estilos atuais são CSS puro. Ainda não há SCSS, variáveis Sass, mixins ou funções. |
 | 08 | Atendido na home/login | A tipografia usa `clamp()` e a folha específica segue uma abordagem mobile-first com media query. |
 | 09 | Atendido na home/login | A imagem de fundo é um elemento `<img>` fluido, dimensionado em `css/login.css` com `width`, `height` e `object-fit: cover`. |
