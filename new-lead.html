@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Cadastro de novo lead no CRM Atendimento e Vendas."
+    >
+    <meta name="theme-color" content="#0c1b2d">
+    <title>Novo Lead | CRM Atendimento &amp; Vendas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/new-lead.css">
+  </head>
+  <body class="new-lead-page">
+    <div class="new-lead-shell">
+      <aside class="new-lead-sidebar" aria-label="Menu principal">
+        <div class="new-lead-sidebar__brand">
+          <span class="new-lead-brand__mark" aria-hidden="true">N</span>
+          <div class="new-lead-brand__text">
+            <strong>Nexus CRM</strong>
+            <span>Atendimento &amp; Vendas</span>
+          </div>
+        </div>
+
+        <nav class="new-lead-sidebar__nav" aria-label="Navegação principal">
+          <a class="new-lead-sidebar__item" href="dashboard.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4h7v7H4zm9 0h7v4h-7zm0 6h7v10h-7zM4 13h7v7H4z"/>
+            </svg>
+            <span>Dashboard</span>
+          </a>
+          <a class="new-lead-sidebar__item" href="lead-manager.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5zm2 0h12M8 10h8M8 14h5"/>
+            </svg>
+            <span>Chamados / Leads</span>
+          </a>
+          <a class="new-lead-sidebar__item new-lead-sidebar__item--active" href="new-lead.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            <span>Novo Lead</span>
+          </a>
+          <a class="new-lead-sidebar__item" href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 20v-1a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v1M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm8 8v-1a4 4 0 0 0-3-3.87M18 4.01V4m.5 7.5a4 4 0 0 1 0 7.99"/>
+            </svg>
+            <span>Trocar Perfil / Login</span>
+          </a>
+        </nav>
+
+        <div class="new-lead-sidebar__status" aria-label="Status da fila">
+          <span class="status-dot status-dot--success" aria-hidden="true"></span>
+          <div>
+            <strong>Fila Ativa</strong>
+            <small>8 em espera</small>
+          </div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v9.5m0 0 3.5-3.5M12 12.5 8.5 9M5 16.5h14"/>
+          </svg>
+        </div>
+      </aside>
+
+      <div class="new-lead-main">
+        <header class="new-lead-header">
+          <div class="new-lead-header__search d-flex align-items-center">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6"/>
+              <path d="M16 16l4 4"/>
+            </svg>
+            <input
+              type="search"
+              aria-label="Buscar lead, chamado, protocolo ou CPF"
+              placeholder="Buscar lead, chamado, protocolo ou CPF..."
+            >
+          </div>
+
+          <div class="new-lead-header__actions">
+            <button class="new-lead-header__icon" type="button" aria-label="Notificações">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5m6 0a3 3 0 1 1-6 0"/>
+              </svg>
+              <span class="new-lead-header__alert" aria-hidden="true"></span>
+            </button>
+
+            <div class="new-lead-user" aria-label="Perfil do usuário">
+              <div class="new-lead-user__meta">
+                <strong>Leandro Larson</strong>
+                <span>Gestor Comercial</span>
+              </div>
+              <span class="new-lead-user__avatar">LL</span>
+            </div>
+          </div>
+        </header>
+
+        <main class="new-lead-content">
+          <div class="new-lead-toolbar">
+            <div class="new-lead-toolbar__meta">
+              <nav class="new-lead-breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Início</a>
+                <span>/</span>
+                <a href="lead-manager.html">Chamados &amp; Leads</a>
+                <span>/</span>
+                <strong>Novo Lead</strong>
+              </nav>
+              <h1>Cadastrar Novo Lead</h1>
+              <p>Preencha as informações para registrar uma oportunidade no fluxo comercial e atribuir o responsável inicial.</p>
+            </div>
+
+            <div class="new-lead-toolbar__actions">
+              <button type="button" class="btn btn-light new-lead-toolbar__secondary">← Cancelar</button>
+              <button type="button" class="btn btn-light new-lead-toolbar__secondary">Salvar e Iniciar</button>
+              <button type="button" class="btn btn-primary new-lead-toolbar__primary">Salvar Lead</button>
+            </div>
+          </div>
+
+          <div class="new-lead-layout">
+            <section class="new-lead-form" aria-label="Formulário de novo lead">
+              <div class="new-lead-card">
+                <div class="new-lead-card__header">
+                  <h2>1. Dados do Cliente e Contato</h2>
+                  <span class="new-lead-card__tag">Obrigatório</span>
+                </div>
+
+                <div class="new-lead-form__row">
+                  <label class="new-lead-field" for="nome-cliente">
+                    <span>Nome Completo ou Razão Social *</span>
+                    <div class="new-lead-input-wrap">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 21v-2a4 4 0 0 0-3-3.87M8 21v-2a4 4 0 0 1 3-3.87m5-2.13a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM8 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/>
+                      </svg>
+                      <input id="nome-cliente" type="text" value="Ex: Ana Maria Silva ou Tech Solutions Ltda" aria-label="Nome do cliente ou empresa">
+                    </div>
+                  </label>
+                </div>
+
+                <div class="new-lead-form__row new-lead-form__row--split">
+                  <label class="new-lead-field" for="email-cliente">
+                    <span>E-mail Corporativo *</span>
+                    <div class="new-lead-input-wrap">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5zm0 0 8 6 8-6"/>
+                      </svg>
+                      <input id="email-cliente" type="email" value="cliente@empresa.com.br" aria-label="E-mail corporativo">
+                    </div>
+                  </label>
+
+                  <label class="new-lead-field" for="telefone-cliente">
+                    <span>Telefone / WhatsApp *</span>
+                    <div class="new-lead-input-wrap">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.1 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.56 2.6a2 2 0 0 1-.46 2.1L8.6 10.6a16 16 0 0 0 6.8 6.8l1.18-1.58a2 2 0 0 1 2.1-.46c.83.26 1.7.44 2.6.56A2 2 0 0 1 22 16.92Z"/>
+                      </svg>
+                      <input id="telefone-cliente" type="tel" value="(11) 98765-4321" aria-label="Telefone do cliente">
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="new-lead-card">
+                <div class="new-lead-card__header">
+                  <h2>2. Origem e Triagem Inicial</h2>
+                  <span class="new-lead-card__tag new-lead-card__tag--muted">Seleção ativa</span>
+                </div>
+
+                <div class="new-lead-section">
+                  <label class="new-lead-field" for="canal-origem">
+                    <span>Canal de Origem *</span>
+                    <div class="new-lead-chip-group" role="list" aria-label="Canais de origem do lead">
+                      <button type="button" class="new-lead-chip new-lead-chip--active">WhatsApp</button>
+                      <button type="button" class="new-lead-chip">Instagram</button>
+                      <button type="button" class="new-lead-chip">E-mail</button>
+                      <button type="button" class="new-lead-chip">Telefone</button>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="new-lead-form__row new-lead-form__row--split">
+                  <label class="new-lead-field" for="grau-prioridade">
+                    <span>Grau de Prioridade *</span>
+                    <div class="new-lead-priority-grid">
+                      <button type="button" class="new-lead-priority new-lead-priority--low">Baixa</button>
+                      <button type="button" class="new-lead-priority new-lead-priority--medium new-lead-priority--selected">Média</button>
+                      <button type="button" class="new-lead-priority new-lead-priority--high">Alta</button>
+                    </div>
+                  </label>
+
+                  <label class="new-lead-field" for="responsavel-inicial">
+                    <span>Captador / Responsável Inicial *</span>
+                    <div class="new-lead-input-wrap new-lead-input-wrap--select">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16 20v-1a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v1M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm8 8v-1a4 4 0 0 0-3-3.87M18 4.01V4m.5 7.5a4 4 0 0 1 0 7.99"/>
+                      </svg>
+                      <input id="responsavel-inicial" type="text" value="Leandro Larson" aria-label="Responsável inicial">
+                    </div>
+                  </label>
+                </div>
+
+                <div class="new-lead-alert">
+                  <span class="new-lead-alert__icon">⏱</span>
+                  <span>SLA previsto: atendimento em até 1 hora.</span>
+                </div>
+              </div>
+
+              <div class="new-lead-card">
+                <div class="new-lead-card__header">
+                  <h2>3. Endereço &amp; Localização (ViaCEP)</h2>
+                  <span class="new-lead-card__tag new-lead-card__tag--success">ViaCEP Ativa</span>
+                </div>
+
+                <div class="new-lead-form__row new-lead-form__row--cep">
+                  <label class="new-lead-field" for="cep">
+                    <span>CEP (Auto-preenchimento)</span>
+                    <div class="new-lead-cep-row">
+                      <div class="new-lead-input-wrap new-lead-input-wrap--cep">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M10 3.5h4M7 8.5h10M7 12.5h10M7 16.5h6M5 5.5h14v13H5z"/>
+                        </svg>
+                        <input id="cep" type="text" value="01001-000" aria-label="CEP do cliente">
+                      </div>
+                      <button type="button" class="btn btn-outline-primary new-lead-cep-button">Buscar CEP</button>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="new-lead-form__row new-lead-form__row--split">
+                  <label class="new-lead-field" for="logradouro">
+                    <span>Logradouro / Rua</span>
+                    <input id="logradouro" type="text" value="Praça da Sé" aria-label="Logradouro">
+                  </label>
+                  <label class="new-lead-field" for="numero">
+                    <span>Número</span>
+                    <input id="numero" type="text" value="402" aria-label="Número do endereço">
+                  </label>
+                </div>
+
+                <div class="new-lead-form__row new-lead-form__row--split">
+                  <label class="new-lead-field" for="complemento">
+                    <span>Complemento</span>
+                    <input id="complemento" type="text" value="Sala 402, Bloco B" aria-label="Complemento do endereço">
+                  </label>
+                  <label class="new-lead-field" for="bairro">
+                    <span>Bairro</span>
+                    <input id="bairro" type="text" value="Centro" aria-label="Bairro do endereço">
+                  </label>
+                </div>
+
+                <div class="new-lead-form__row new-lead-form__row--split">
+                  <label class="new-lead-field" for="cidade">
+                    <span>Cidade</span>
+                    <input id="cidade" type="text" value="São Paulo" aria-label="Cidade do endereço">
+                  </label>
+                  <label class="new-lead-field" for="uf">
+                    <span>UF</span>
+                    <input id="uf" type="text" value="SP" aria-label="UF do endereço">
+                  </label>
+                </div>
+              </div>
+
+              <div class="new-lead-card">
+                <div class="new-lead-card__header">
+                  <h2>4. Detalhes Comerciais Iniciais</h2>
+                  <span class="new-lead-card__tag new-lead-card__tag--muted">Opcional</span>
+                </div>
+
+                <div class="new-lead-form__row new-lead-form__row--split">
+                  <label class="new-lead-field" for="estagio-inicial">
+                    <span>Estágio Inicial no Funil</span>
+                    <select id="estagio-inicial" class="form-select" aria-label="Estágio inicial no funil">
+                      <option>Novo (Triagem Inicial)</option>
+                      <option>Orçamento</option>
+                      <option>Pedido</option>
+                      <option>Venda Fechada</option>
+                    </select>
+                  </label>
+
+                  <label class="new-lead-field" for="valor-estimado">
+                    <span>Valor Estimado da Oportunidade</span>
+                    <div class="new-lead-input-wrap new-lead-input-wrap--money">
+                      <span>R$</span>
+                      <input id="valor-estimado" type="text" value="3.500,00" aria-label="Valor estimado da oportunidade">
+                    </div>
+                  </label>
+                </div>
+
+                <label class="new-lead-field" for="observacoes">
+                  <span>Observações Iniciais / Primeiro Relato do Cliente</span>
+                  <textarea id="observacoes" rows="5" aria-label="Observações iniciais">Descreva a necessidade expressa pelo cliente no primeiro contato, restrições operacionais ou interesse em produto específico.</textarea>
+                </label>
+              </div>
+
+              <div class="new-lead-card new-lead-card--footer">
+                <button type="button" class="btn btn-light new-lead-footer__secondary">Limpar</button>
+                <button type="button" class="btn btn-light new-lead-footer__secondary">Salvar</button>
+                <button type="button" class="btn btn-primary new-lead-footer__primary">Cadastrar Lead</button>
+              </div>
+            </section>
+
+            <aside class="new-lead-preview" aria-label="Prévia do lead">
+              <div class="new-lead-preview__panel">
+                <div class="new-lead-preview__header">
+                  <span class="new-lead-preview__badge">Prévia do Card</span>
+                  <span class="new-lead-preview__status">PIPELINE LIVE</span>
+                </div>
+
+                <p class="new-lead-preview__description">Veja exatamente como este lead aparecerá na coluna do Kanban de Vendas assim que registrado.</p>
+
+                <div class="new-lead-preview__card">
+                  <div class="new-lead-preview__channel-row">
+                    <span class="new-lead-preview__channel new-lead-preview__channel--green">WhatsApp</span>
+                    <span class="new-lead-preview__channel new-lead-preview__channel--muted">Novo</span>
+                    <span class="new-lead-preview__channel new-lead-preview__channel--warning">Média</span>
+                  </div>
+
+                  <h3>Nome do Lead</h3>
+                  <div class="new-lead-preview__location">Localização não informada</div>
+
+                  <div class="new-lead-preview__money-row">
+                    <span>Valor Previsto</span>
+                    <strong>R$ 0,00</strong>
+                  </div>
+
+                  <div class="new-lead-preview__meta-row">
+                    <span class="new-lead-preview__person">LL</span>
+                    <span>Leandro Larson</span>
+                    <span class="new-lead-preview__chevron">›</span>
+                  </div>
+                </div>
+
+                <div class="new-lead-preview__metrics">
+                  <div class="new-lead-preview__metric">
+                    <span class="new-lead-preview__label">Tempo de resposta</span>
+                    <strong>1 hora</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="new-lead-preview__panel new-lead-preview__panel--compact">
+                <div class="new-lead-preview__panel-top">
+                  <span class="new-lead-preview__panel-title">Velocidade de Resposta</span>
+                  <span class="status-dot status-dot--success" aria-hidden="true"></span>
+                </div>
+                <div class="new-lead-preview__metric-value">&lt;15m</div>
+                <p>Leads contados nos primeiros 15 minutos possuem taxa de conversão 3,8x superior.</p>
+                <div class="new-lead-preview__note">Cronometragem automática iniciada na primeira mensagem enviada.</div>
+              </div>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

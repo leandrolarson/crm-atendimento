@@ -90,13 +90,29 @@ a largura total no mobile e reduzir sua proporção em telas maiores.
 | `input` | Mantém os campos de busca e filtro com aparência consistente. |
 | `w-*`, `h-*` | Ainda não usados em larga escala; a página prioriza tamanhos por CSS próprio. |
 
+## Classes usadas em `new-lead.html`
+
+| Classe | Efeito |
+|---|---|
+| `d-flex` | Organiza a barra de busca, os grupos de ações e as linhas do formulário. |
+| `align-items-center` | Alinha verticalmente os ícones, campos e ações em contexto de linha. |
+| `justify-content-between` | Distribui espaço entre a área de título e os botões do topo da página. |
+| `btn` | Define a base visual dos botões de ação principal e secundária. |
+| `btn-primary` | Destaca a ação principal de salvar ou cadastrar o lead. |
+| `btn-light` | Cria ações secundárias mais discretas, como cancelar e limpar. |
+| `btn-outline-primary` | Mantém continuidade visual ao botão de busca do CEP. |
+| `form-select` | Aplica estilo aos selects de estágio e prioridade. |
+| `input` | Define campos de texto e valores em formulário. |
+| `textarea` | Cria área de observações e detalhes iniciais do cliente. |
+| `row`, `col-*` | Os componentes seguem o padrão geral do Bootstrap, embora a estrutura principal seja customizada em CSS para a página. |
+
 ## Convenções para as próximas páginas
 
 - Registrar somente classes Bootstrap efetivamente usadas no HTML.
 - Descrever o efeito no contexto da página, especialmente quando combinações
   de classes definem o layout.
 - Separar classes Bootstrap de classes próprias, como `login-card`,
-  `dashboard-sidebar__item` e `lead-manager-stat`; estas pertencem aos arquivos
-  CSS do projeto.
+  `dashboard-sidebar__item`, `lead-manager-stat` e `new-lead-card`; estas
+  pertencem aos arquivos CSS do projeto.
 - Registrar componentes JavaScript do Bootstrap quando forem adicionados e
   indicar o arquivo ou a página onde são usados.
